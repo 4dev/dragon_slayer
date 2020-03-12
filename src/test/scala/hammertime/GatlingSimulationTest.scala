@@ -13,14 +13,13 @@ class GatlingSimulationTest extends Simulation {
   val httpProtocol = http
     .baseUrl("http://localhost:8080/")
 
-  val scn = scenario("Wrath of Thor").repeat(1000, "n") {
-    exec(
+  val scn = scenario("Wrath of Thor")
+    .exec(
       http("HammerTime")
-        .get("hammer/deferred/thor")
+        .get("hammer/thor")
         .check(status.is(200))
     ).pause(Duration.apply(5, TimeUnit.MILLISECONDS))
-  }
 
-  setUp(scn.inject(atOnceUsers(30))).maxDuration(FiniteDuration.apply(60, "seconds"))
+  setUp(scn.inject(constantUsersPerSec(20) during (60 seconds)))
     .protocols(httpProtocol)
 }
