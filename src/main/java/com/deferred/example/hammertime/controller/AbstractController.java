@@ -6,11 +6,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.context.request.async.DeferredResult;
 
 public abstract class AbstractController {
-  public AbstractController() {
-  }
 
   protected <T> DeferredResult<ResponseEntity<T>> executeDeferred(AbstractController.ThrowingSupplier<T> supplier) {
-    DeferredResult<ResponseEntity<T>> deferred = new DeferredResult();
+    DeferredResult<ResponseEntity<T>> deferred = new DeferredResult<>();
     Callable<ResponseEntity<T>> callable = () -> {
       try {
         deferred.setResult(supplier.get());

@@ -8,15 +8,14 @@ import org.springframework.web.client.RestTemplate;
 
 @EnableAsync
 @SpringBootApplication
-public class HammertimeApplication {
+public class DragonSlayerApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(HammertimeApplication.class, args);
-	}
+  public static void main(String[] args) {
+    SpringApplication.run(DragonSlayerApplication.class, args);
+  }
 
-	@Bean
-	public RestTemplate restTemplate() {
-		return new RestTemplate();
-	}
-
+  @Bean
+  public RestTemplate restTemplate() {
+    return new RestTemplate();
+  }
 }

@@ -6,12 +6,12 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.0.2.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath/>
 	</parent>
 	<groupId>com.deferred.example</groupId>
-	<artifactId>hammertime</artifactId>
+	<artifactId>dragon_slayer</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>hammertime</name>
+	<name>dragon_slayer</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -36,72 +36,20 @@
 			</exclusions>
 		</dependency>
 		<dependency>
-			<groupId>io.gatling.highcharts</groupId>
-			<artifactId>gatling-charts-highcharts</artifactId>
-			<version>3.3.1</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter</artifactId>
-			<version>RELEASE</version>
+			<version>5.6.0</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
 
 	<build>
-		<testSourceDirectory>src/test/scala</testSourceDirectory>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			<plugin>
-				<groupId>net.alchim31.maven</groupId>
-				<artifactId>scala-maven-plugin</artifactId>
-				<version>4.3.1</version>
-				<executions>
-					<execution>
-						<goals>
-							<goal>testCompile</goal>
-						</goals>
-						<configuration>
-							<jvmArgs>
-								<jvmArg>-Xss100M</jvmArg>
-							</jvmArgs>
-							<args>
-								<arg>-target:jvm-1.8</arg>
-								<arg>-deprecation</arg>
-								<arg>-feature</arg>
-								<arg>-unchecked</arg>
-								<arg>-language:implicitConversions</arg>
-								<arg>-language:postfixOps</arg>
-							</args>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>io.gatling</groupId>
-				<artifactId>gatling-maven-plugin</artifactId>
-				<version>3.0.5</version>
-			</plugin>
 		</plugins>
 	</build>
-
-	<repositories>
-		<repository>
-			<id>spring-milestones</id>
-			<name>Spring Milestones</name>
-			<url>https://repo.spring.io/milestone</url>
-		</repository>
-	</repositories>
-	<pluginRepositories>
-		<pluginRepository>
-			<id>spring-milestones</id>
-			<name>Spring Milestones</name>
-			<url>https://repo.spring.io/milestone</url>
-		</pluginRepository>
-	</pluginRepositories>
 
 </project>
